@@ -11,6 +11,14 @@
 
 This project installs and configures a Brook VPN server with a single command. 
 
+## Support
+
+🌟 If this project was useful to you, don't forget to give it a star 🌟
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://github.com/jalalsaberi/BrookServer/)
+
+[<img width="15" height="15"  alt="usdt" src="https://cryptocurrencyliveprices.com/img/usdt-tether.png">](https://github.com/jalalsaberi/BrookServer/) USDT (TRC20): `TKHNY5zze2PhSaQUGrEyoDz1E9fCG9hjh6`
+
 ## Install & Upgrade
 
 To install, simply copy & run the install script:
@@ -40,7 +48,3 @@ This script is based on [Brook & Nami by TxThinking](https://github.com/txthinki
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Support
-
-You can also buy me a coffee if you find this project helpful.
