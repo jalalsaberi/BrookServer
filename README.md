@@ -1,4 +1,13 @@
-# Brook Server
+<img width="140" height="140"  alt="Brook" src="https://github.com/jalalsaberi/BrookServer/blob/main/logo.png">
+
+# Brook VPN Server
+
+**A fast, automatic installer and auto-configuration for Brook VPN Server**
+
+[![](https://img.shields.io/badge/Version-v1.0.0-blue)](https://github.com/jalalsaberi/BrookServer/releases)
+[![](https://img.shields.io/badge/Licence-MIT-green)](https://github.com/jalalsaberi/BrookServer?tab=MIT-1-ov-file)
+
+> *Disclaimer:* This project is created solely for educational purposes. The responsibility for any misuse of it or its use in environments that do not endorse such tools and are illegal is entirely yours.
 
 This project installs and configures a Brook VPN server with a single command. 
 
