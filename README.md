@@ -31,6 +31,18 @@ You will be prompted to enter:
 - Password
 - Port
 
+## Download Client Apps
+
+- Windows, MacOS, Liunx, FreeBSD, Android: [Download Last Version](https://github.com/txthinking/brook/releases/)
+- iOS: [Download Last Version](https://apps.apple.com/us/app/brook-network-tool/id1216002642)
+
+## How to Use for Clients
+
+- Windows: [Tutorial](https://www.txthinking.com/talks/articles/msix-brook-en.article)
+- MacOS: [Tutorial](https://www.txthinking.com/talks/articles/macos-app-mode-en.article)
+- Linux: [Tutorial](https://www.txthinking.com/talks/articles/linux-app-brook-en.article)
+- OpenWrt: [Tutorial](https://www.txthinking.com/talks/articles/brook-openwrt-en.article)
+
 ## Features
 
 The script will install Nami, Brook, configure the service, and start it.
