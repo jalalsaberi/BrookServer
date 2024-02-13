@@ -320,7 +320,7 @@ define_protocol() {
         banner
         echo -e "${BOLD}${BRIGHT_YELLOW}WSS VPN Server${END} ${BRIGHT_YELLOW}Installed and Started Successfully.${END}\n"
         echo -e "\n${CYAN}Brook Version:${END} $brook_version"
-        echo -e "${CYAN}WSS Server Domain:${END} $connect\n${CYAN}WS Server Password:${END} $pass\n${CYAN}WSS Server URI:${END} wss://$connect:$port"
+        echo -e "${CYAN}WSS Server Domain:${END} $connect\n${CYAN}WSS Server Password:${END} $pass\n${CYAN}WSS Server URI:${END} wss://$connect:$port"
     elif [[ $protocol == "all" ]]; then
         add_service "$brook_path wsserver -l :$portws -p $pass" "${brook[1]}" "Brook WS Server"
         add_service "$brook_path wssserver --domainaddress $domain:$portwss -p $pass" "${brook[2]}" "Brook WSS Server"
