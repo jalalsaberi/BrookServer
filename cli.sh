@@ -1,5 +1,5 @@
 #!/bin/bash
-# Compatible to Ubuntu ≥ 18
+# Compatible to Ubuntu ≥ 18 || Debian ≥ 10
 # https://github.com/jalalsaberi/BrookServer
 
 BOLD="\e[1m"
