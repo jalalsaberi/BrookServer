@@ -2,14 +2,14 @@
 
 # Brook VPN Server
 
-**A fast, automatic installer and auto-configuration for Brook VPN Server**
+**A fast, automatic installer for Brook VPN Server with CLI Menu**
 
-[![](https://img.shields.io/badge/Version-v1.0.0-blue)](https://github.com/jalalsaberi/BrookServer/releases)
+[![](https://img.shields.io/badge/Version-v2.0.0-blue)](https://github.com/jalalsaberi/BrookServer/releases)
 [![](https://img.shields.io/badge/Licence-MIT-green)](https://github.com/jalalsaberi/BrookServer?tab=MIT-1-ov-file)
 
 > *Disclaimer:* This project is created solely for educational purposes. The responsibility for any misuse of it or its use in environments that do not endorse such tools and are illegal is entirely yours.
 
-This project installs and configures a Brook VPN server with a single command. 
+This project installs Brook VPN server with a CLI Menu. 
 
 ## Support
 
@@ -25,12 +25,6 @@ To install, simply copy & run the install script:
 
     bash <(curl -Ls https://raw.githubusercontent.com/jalalsaberi/BrookServer/main/install.sh)
 
-You will be prompted to enter:
-
-- Server IP/Domain
-- Password
-- Port
-
 ## Download Client Apps
 
 - Windows, MacOS, Liunx, FreeBSD, Android: [Download Last Version](https://github.com/txthinking/brook/releases/)
@@ -45,18 +39,19 @@ You will be prompted to enter:
 
 ## Features
 
-The script will install Nami, Brook, configure the service, and start it.
+The script will install Nami, Brook and give you a CLI Menu for Brook Server.
 
 - Installs Nami to isolate Brook server
 - Installs latest Brook version
 - Configures Brook as a systemd service for easy management
 - Supports IP and domain/subdomain addresses
 - Provides login info after install
+- CLI Menu for easy use
 
 ## Credits
 
-This script is based on [Brook & Nami by TxThinking](https://github.com/txthinking/).
+This script utilizes Brook & Nami by [TxThinking](https://github.com/txthinking/)
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License (see the LICENSE file for details)

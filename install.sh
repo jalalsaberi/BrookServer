@@ -1,91 +1,150 @@
 #!/bin/bash
-# v1.0.0
-# Tested on Ubuntu 22.04.3 LTS
+# Compatible to Ubuntu ≥ 18
 # https://github.com/jalalsaberi/BrookServer
 
 BOLD="\e[1m"
 UNDERLINE="\e[4m"
 WHITE="\e[37m"
-GREEN="\e[32m"
 YELLOW="\e[33m"
 BRIGHT_YELLOW="\e[93m"
 MAGENTA="\e[35m"
 CYAN="\e[36m"
+RED="\e[31m"
 END="\e[0m"
+version='v2.0.0'
+github='https://github.com/jalalsaberi/BrookServer'
+brook=("brook.service" "brookws.service" "brookwss.service")
 
-success="${BOLD}${BRIGHT_YELLOW}Brook VPN Server${END} ${BRIGHT_YELLOW}Installed and Started Successfully.${END}"
-service_name="brook.service"
-
-add_service() {
-    local command=$1
-    cat > "/etc/systemd/system/brook.service" << EOF
-[Unit]
-Description=Brook Server
-
-[Service]
-ExecStart=$HOME/.nami/bin/$command
-Restart=always
-
-[Install]  
-WantedBy=multi-user.target
-EOF
-    chmod +x /etc/systemd/system/brook.service
-    systemctl daemon-reload
-    systemctl enable brook.service
-    systemctl start brook.service
+banner() {
+    echo -e "   ${MAGENTA}╔╗ ┬─┐┌─┐┌─┐┬┌─  ╔═╗┌─┐┬─┐┬  ┬┌─┐┬─┐${END}"
+    echo -e "   ${MAGENTA}╠╩╗├┬┘│ ││ │├┴┐  ╚═╗├┤ ├┬┘└┐┌┘├┤ ├┬┘${END}"
+    echo -e "   ${MAGENTA}╚═╝┴└─└─┘└─┘┴ ┴  ╚═╝└─┘┴└─ └┘ └─┘┴└─${END}"
+    echo -e "${YELLOW}──────────────────────────────────────────${END}"
+    echo -e "                 ${WHITE}$version${END}"
+    echo -e "${YELLOW}──────────────────────────────────────────${END}"
+    echo -e "${CYAN}${UNDERLINE}$github${END}"
+    echo -e "${YELLOW}──────────────────────────────────────────${END}\n"
 }
 
-is_ip() {
-    local option=$1
-    local password=$2
-    local port=$3
-    brook_path=$(which brook)
-    brook_version=$($brook_path -v | awk '{print $3}')
-    if [[ $option =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-        add_service "brook server -l :$port -p $password"
-        echo -e "${success}\n\n${CYAN}Brook Version:${END} $brook_version"
-        echo -e "${CYAN}Brook IP:${END} $option\n${CYAN}Brook Password:${END} $password"
-        echo -e "\n${UNDERLINE}${WHITE}https://github.com/jalalsaberi/BrookServer${END}\n"
+blink_str() {
+    clear
+    banner
+    local msg=$1
+    for i in {1..2}; do
+        clear && echo -e "${YELLOW}$msg${END}"&& sleep 0.2
+        clear && echo -e "${RED}$msg${END}" && sleep 0.2
+        clear && echo -e "${YELLOW}$msg${END}"&& sleep 0.2
+        clear && echo -e "${RED}$msg${END}" && sleep 0.2
+    done
+}
+
+add_var() {
+    local protocol="$1"
+    local status="$2"
+    if [ -f "$HOME/.brook-cli" ]; then
+        source "$HOME/.brook-cli" > /dev/null
+    fi
+    if [[ $protocol == "br" ]]; then
+        export "BROOK=$status"
+        cat > "$HOME/.brook-cli" << EOF
+export BROOK=$status
+export BROOKWS=9
+export BROOKWSS=9
+export BROOKALL=9
+EOF
+    elif [[ $protocol == "ws" ]]; then
+        export "BROOKWS=$status"
+        cat > "$HOME/.brook-cli" << EOF
+export BROOK=9
+export BROOKWS=$status
+export BROOKWSS=9
+export BROOKALL=9
+EOF
+    elif [[ $protocol == "wss" ]]; then
+        export "BROOKWSS=$status"
+        cat > "$HOME/.brook-cli" << EOF
+export BROOK=9
+export BROOKWS=9
+export BROOKWSS=$status
+export BROOKALL=9
+EOF
+    elif [[ $protocol == "all" ]]; then
+        export "BROOKALL=$status"
+        cat > "$HOME/.brook-cli" << EOF
+export BROOK=$status
+export BROOKWS=$status
+export BROOKWSS=$status
+export BROOKALL=$status
+EOF
     else
-        add_service "brook wssserver --domainaddress $option:$port --password $password"
-        echo -e "${success}\n\n${CYAN}Brook Version:${END} $brook_version"
-        echo -e "${CYAN}Brook Domain:${END} ${UNDERLINE}$option${END}\n${CYAN}Brook Password:${END} $password\n${CYAN}Brook WSS URI:${END} ${UNDERLINE}wss://$option:$port${END}"
-        echo -e "\n${UNDERLINE}${WHITE}https://github.com/jalalsaberi/BrookServer${END}\n"
+        blink_str "Invalid Input!!!"
+        menu_cli
+    fi
+    if [ -f "$HOME/.brook-cli" ]; then
+        source "$HOME/.brook-cli" > /dev/null
     fi
 }
 
-clear
-echo -e "${MAGENTA}${BOLD}[apt Update & Upgrade]${END}"
-sleep 0.5
-apt update && apt upgrade -y
-clear
-if systemctl is-active --quiet "$service_name" && systemctl is-enabled --quiet "$service_name"; then
-    echo -e "${MAGENTA}${BOLD}[Stopping Brook Service]${END}"
-    sleep 0.5
-    systemctl stop "$service_name"
+stop_service() {
+    add_var "all" "9"
+    count=0
+    for service in "${brook[@]}"; do
+        service_status=$(systemctl is-active $service)
+        if [ "$service_status" = "active" ]; then
+            systemctl stop "${brook[$count]}" && systemctl disable "${brook[$count]}"
+            echo -e "${BOLD}${BRIGHT_YELLOW}$service_status${END} ${BRIGHT_YELLOW}Stopped Successfully.${END}"
+            count+=1
+        else
+            continue
+        fi
+        echo -e "${BOLD}${BRIGHT_YELLOW}No Service${END} ${BRIGHT_YELLOW}is running.${END}"
+    done
+    systemctl reset-failed && systemctl daemon-reload
+}
+
+apt_up() {
     clear
-else
-    continue
+    banner
+    echo -e "${MAGENTA}${BOLD}[APT Update]${END}"
+    sleep 0.5
+    apt update -y
+    apt install curl -y
+}
+
+nami_brook() {
+    clear
+    banner
+    echo -e "${MAGENTA}${BOLD}[Installing Nami & Brook]${END}"
+    sleep 0.5
+    curl https://bash.ooo/nami.sh > nami.sh
+    sed -i '/exec -l \$SHELL/d' nami.sh
+    chmod +x nami.sh
+    bash nami.sh
+    rm -f nami.sh
+    clear
+    banner
+    echo -e "${MAGENTA}${BOLD}[Installing Brook Server]${END}"
+    sleep 0.5
+    stop_service
+    nami install brook
+}
+
+# Start
+touch $HOME/.brook-cli
+chmod +x $HOME/.brook-cli
+cat > $HOME/.brook-cli <<EOF
+export BROOK=9
+export BROOKWS=9
+export BROOKWSS=9
+export BROOKALL=0
+EOF
+if [ -f "$HOME/.brook-cli" ]; then
+    source "$HOME/.brook-cli" > /dev/null
 fi
-echo -e "${MAGENTA}${BOLD}[Installing Nami]${END}"
-sleep 0.5
-curl https://bash.ooo/nami.sh > nami.sh
-sed -i '/exec -l \$SHELL/d' nami.sh
-chmod +x nami.sh
-bash nami.sh
+apt_up
+#curl -Ls https://raw.githubusercontent.com/jalalsaberi/BrookServer/main/cli.sh -o /usr/bin/brook-cli
+cp cli.sh /usr/bin/brook-cli
+chmod +x /usr/bin/brook-cli
+nami_brook
 source $HOME/.bashrc
-source $HOME/.bash_profile
-clear
-echo -e "${MAGENTA}${BOLD}[Installing Brook Server]${END}"
-sleep 0.5
-nami install brook
-rm -f nami.sh
-clear
-echo -e "${MAGENTA}${BOLD}[Setting Server VARS]${END}"
-sleep 0.5
-echo -en "${YELLOW}Enter your server IP or Domain/Subdomain:${END} " && read option
-echo -en "${YELLOW}Enter your Password:${END} " && read password
-echo -en "${YELLOW}Enter your Port:${END} " && read port
-clear
-is_ip "$option" "$password" "$port"
-systemctl restart "$service_name"
+brook-cli
