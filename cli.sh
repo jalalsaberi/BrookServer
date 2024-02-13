@@ -355,7 +355,7 @@ define_protocol() {
 }
 
 add_server() {
-    blink_str "*** Recommended Protocol is WSS Server on Port 443 ***\n"
+    blink_str "*** Recommended Protocol is WSS Server on Port 443 Using a Domain/Subdomain with Cloudflare Proxy ON ***\n"
     echo -e "${MAGENTA}${BOLD}[Choose Your Protocol]${END}\n"
     echo -e "${YELLOW}1) WSS Server (Uses Domain or Subdomain)${END}"
     echo -e "${YELLOW}2) WS Server (Uses IPv4)${END}"

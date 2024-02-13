@@ -142,8 +142,7 @@ if [ -f "$HOME/.brook-cli" ]; then
     source "$HOME/.brook-cli" > /dev/null
 fi
 apt_up
-#curl -Ls https://raw.githubusercontent.com/jalalsaberi/BrookServer/main/cli.sh -o /usr/bin/brook-cli
-cp cli.sh /usr/bin/brook-cli
+curl -Ls https://raw.githubusercontent.com/jalalsaberi/BrookServer/main/cli.sh -o /usr/bin/brook-cli
 chmod +x /usr/bin/brook-cli
 nami_brook
 source $HOME/.bashrc
