@@ -44,9 +44,14 @@ The script will install Nami, Brook and give you a CLI Menu for Brook Server.
 - Installs Nami to isolate Brook server
 - Installs latest Brook version
 - Configures Brook as a systemd service for easy management
-- Supports IP and domain/subdomain addresses
+- Supports IP and Domain/Subdomain addresses
 - Provides login info after install
-- CLI Menu for easy use
+- Addition of a CLI menu for ease of use & management
+- Ability to check the status of services
+- Ability to add and remove services
+- Ability to stop, start, and restart services
+- Ability to remove services
+- Ability to completely uninstall the program and its dependencies
 
 ## Credits
 
