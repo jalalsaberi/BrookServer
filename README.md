@@ -25,6 +25,11 @@ To install, simply copy & run the install script:
 
     bash <(curl -Ls https://raw.githubusercontent.com/jalalsaberi/BrookServer/main/install.sh)
 
+## Compatible OS
+
+- Debian ≥ 10
+- Ubuntu ≥ 18
+
 ## Download Client Apps
 
 - Windows, MacOS, Liunx, FreeBSD, Android: [Download Last Version](https://github.com/txthinking/brook/releases/)
