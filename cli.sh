@@ -41,36 +41,16 @@ add_var() {
     fi 
     if [[ $protocol == "br" ]]; then
         export "BROOK=$status"
-        cat > "$HOME/.brook-cli" << EOF
-export BROOK=$status
-export BROOKWS=9
-export BROOKWSS=9
-export BROOKALL=9
-EOF
+        sed -i '/^export BROOK=/d' "$HOME/.brook-cli" && echo "export BROOK=$status" >> "$HOME/.brook-cli"
     elif [[ $protocol == "ws" ]]; then
         export "BROOKWS=$status"
-        cat > "$HOME/.brook-cli" << EOF
-export BROOK=9
-export BROOKWS=$status
-export BROOKWSS=9
-export BROOKALL=9
-EOF
+        sed -i '/^export BROOKWS=/d' "$HOME/.brook-cli" && echo "export BROOKWS=$status" >> "$HOME/.brook-cli"
     elif [[ $protocol == "wss" ]]; then
         export "BROOKWSS=$status"
-        cat > "$HOME/.brook-cli" << EOF
-export BROOK=9
-export BROOKWS=9
-export BROOKWSS=$status
-export BROOKALL=9
-EOF
+        sed -i '/^export BROOKWSS=/d' "$HOME/.brook-cli" && echo "export BROOKWSS=$status" >> "$HOME/.brook-cli"
     elif [[ $protocol == "all" ]]; then
         export "BROOKALL=$status"
-        cat > "$HOME/.brook-cli" << EOF
-export BROOK=$status
-export BROOKWS=$status
-export BROOKWSS=$status
-export BROOKALL=$status
-EOF
+        sed -i '/^export BROOKALL=/d' "$HOME/.brook-cli" && echo "export BROOKALL=$status" >> "$HOME/.brook-cli"
     else
         blink_str "Invalid Input!!!"
         menu_cli
