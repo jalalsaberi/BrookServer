@@ -520,6 +520,8 @@ options() {
         banner
         echo -e "${BRIGHT_YELLOW}BrookServer Uninstalled Successfully.${END}"
         echo -e $sign
+        rm -rf /usr/bin/brook-cli
+        source $HOME/.bashrc
         exit
     elif [[ $userinput == "0" ]]; then
         exit
