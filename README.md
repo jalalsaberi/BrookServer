@@ -60,7 +60,8 @@ The script will install Nami, Brook and give you a CLI Menu for Brook Server.
 
 ## Credits
 
-This script utilizes **Brook** & **Nami** by [TxThinking](https://github.com/txthinking/)
+This script utilizes:
+- **Brook** & **Nami** by [TxThinking](https://github.com/txthinking/)
 
 ## License
 
