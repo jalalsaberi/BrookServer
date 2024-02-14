@@ -65,4 +65,4 @@ This script utilizes:
 
 ## License
 
-This project is licensed under the MIT License (see the LICENSE file for details)
+This project is licensed under the [MIT License](https://github.com/jalalsaberi/BrookServer?tab=MIT-1-ov-file) (see the LICENSE file for details)
