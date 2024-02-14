@@ -11,7 +11,7 @@ MAGENTA="\e[35m"
 CYAN="\e[36m"
 RED="\e[31m"
 END="\e[0m"
-version='v2.0.0'
+version='v2.0.2'
 github='https://github.com/jalalsaberi/BrookServer'
 brook=("brook.service" "brookws.service" "brookwss.service")
 
