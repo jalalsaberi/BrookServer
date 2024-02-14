@@ -54,7 +54,13 @@ add_var() {
         export "BROOKWSS=$status"
         sed -i '/^export BROOKWSS=/d' "$HOME/.brook-cli" && echo "export BROOKWSS=$status" >> "$HOME/.brook-cli"
     elif [[ $protocol == "all" ]]; then
+        export "BROOK=$status"
+        export "BROOKWS=$status"
+        export "BROOKWSS=$status"
         export "BROOKALL=$status"
+        sed -i '/^export BROOK=/d' "$HOME/.brook-cli" && echo "export BROOK=$status" >> "$HOME/.brook-cli"
+        sed -i '/^export BROOKWS=/d' "$HOME/.brook-cli" && echo "export BROOKWS=$status" >> "$HOME/.brook-cli"
+        sed -i '/^export BROOKWSS=/d' "$HOME/.brook-cli" && echo "export BROOKWSS=$status" >> "$HOME/.brook-cli"
         sed -i '/^export BROOKALL=/d' "$HOME/.brook-cli" && echo "export BROOKALL=$status" >> "$HOME/.brook-cli"
     else
         blink_str "Invalid Input!!!"
