@@ -1,4 +1,4 @@
-<img width="140" height="140"  alt="Brook" src="https://github.com/jalalsaberi/BrookServer/blob/main/logo.png">
+<img width="140" height="140"  alt="Brook" src="https://github.com/jalalsaberi/BrookServer/blob/main/.logo.png">
 
 # Brook VPN Server
 
