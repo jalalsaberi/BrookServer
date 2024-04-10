@@ -15,12 +15,22 @@ This project installs Brook VPN server with a CLI Menu.
 
 🌟 If this project was useful to you, don't forget to give it a star 🌟
 
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://github.com/jalalsaberi/BrookServer/)
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://nowpayments.io/donation/jalalsaberi)
 
-[<img width="15" height="15"  alt="usdt" src="https://cryptocurrencyliveprices.com/img/usdt-tether.png">](https://github.com/jalalsaberi/BrookServer/) USDT (TRC20):
+[<img width="15" height="15"  alt="usdt-bep20" src="https://cryptocurrencyliveprices.com/img/usdt-tether.png">](https://github.com/jalalsaberi/PingBot/) [<img width="15" height="15" alt="binance" src="https://www.svgrepo.com/show/366901/bnb.svg">](https://github.com/jalalsaberi/PingBot/) USDT (BEP20):
+```
+0x165aAc518A3c2Ca5a2108e923e767d3661FA88F3
+```
+[<img width="15" height="15"  alt="usdt-trc20" src="https://cryptocurrencyliveprices.com/img/usdt-tether.png">](https://github.com/jalalsaberi/PingBot/) [<img width="15" height="15" alt="tron" src="https://www.svgrepo.com/show/428646/tron-crypto.svg">](https://github.com/jalalsaberi/PingBot/) USDT (TRC20):
 ```
 TKHNY5zze2PhSaQUGrEyoDz1E9fCG9hjh6
 ```
+
+[<img width="18" height="18"  alt="crypto" src="https://img.icons8.com/fluency/48/exchange-money-ethereum.png">](https://nowpayments.io/donation/jalalsaberi) More Cryptocurrencies:
+
+<a href="https://nowpayments.io/donation?api_key=D8PCVB0-GRN4ZKB-HE7GFGC-84QRXA5&source=lk_donation&medium=referral" target="_blank">
+     <img width="200" src="https://nowpayments.io/images/embeds/donation-button-white.svg" alt="Crypto donation button by NOWPayments">
+</a>
 
 ## Install & Upgrade
 
