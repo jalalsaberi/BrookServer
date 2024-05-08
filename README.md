@@ -17,11 +17,11 @@ This project installs Brook VPN server with a CLI Menu.
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://nowpayments.io/donation/jalalsaberi)
 
-[<img width="15" height="15"  alt="usdt-bep20" src="https://cryptocurrencyliveprices.com/img/usdt-tether.png">](https://github.com/jalalsaberi/PingBot/) [<img width="15" height="15" alt="binance" src="https://www.svgrepo.com/show/366901/bnb.svg">](https://github.com/jalalsaberi/PingBot/) USDT (BEP20):
+[<img width="17" height="17"  alt="usdt-bep20" src="https://img.icons8.com/color/48/tether.png">](https://github.com/jalalsaberi/PingBot/) [<img width="15" height="15" alt="binance" src="https://www.svgrepo.com/show/366901/bnb.svg">](https://github.com/jalalsaberi/PingBot/) USDT (BEP20):
 ```
 0x165aAc518A3c2Ca5a2108e923e767d3661FA88F3
 ```
-[<img width="15" height="15"  alt="usdt-trc20" src="https://cryptocurrencyliveprices.com/img/usdt-tether.png">](https://github.com/jalalsaberi/PingBot/) [<img width="15" height="15" alt="tron" src="https://www.svgrepo.com/show/428646/tron-crypto.svg">](https://github.com/jalalsaberi/PingBot/) USDT (TRC20):
+[<img width="17" height="17"  alt="usdt-bep20" src="https://img.icons8.com/color/48/tether.png">](https://github.com/jalalsaberi/PingBot/) [<img width="15" height="15" alt="tron" src="https://www.svgrepo.com/show/428646/tron-crypto.svg">](https://github.com/jalalsaberi/PingBot/) USDT (TRC20):
 ```
 TKHNY5zze2PhSaQUGrEyoDz1E9fCG9hjh6
 ```
