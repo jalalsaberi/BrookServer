@@ -78,4 +78,4 @@ This project utilizes:
 
 ## License
 
-This project is licensed under the [MIT License](https://github.com/jalalsaberi/BrookServer?tab=MIT-1-ov-file) (see the LICENSE file for details)
+This project is licensed under the [GPL-3.0 license](https://github.com/jalalsaberi/BrookServer?tab=GPL-3.0-1-ov-file) (see the LICENSE file for details)
