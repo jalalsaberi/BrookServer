@@ -4,8 +4,8 @@
 
 **A fast, automatic installer for Brook VPN Server with CLI Menu**
 
-[![](https://img.shields.io/badge/Version-v2.0.2-blue)](https://github.com/jalalsaberi/BrookServer/releases)
-[![](https://img.shields.io/badge/Licence-MIT-green)](https://github.com/jalalsaberi/BrookServer?tab=MIT-1-ov-file)
+[![](https://img.shields.io/badge/Version-v3.0.0-blue)](https://github.com/jalalsaberi/BrookServer/releases)
+[![](https://img.shields.io/badge/Licence-GPL3.0-green)](https://github.com/jalalsaberi/BrookServer?tab=GPL-3.0-1-ov-file)
 
 > *Disclaimer:* This project is created solely for educational purposes. The responsibility for any misuse of it or its use in environments that do not endorse such tools and are illegal is entirely yours.
 
@@ -17,11 +17,11 @@ This project installs Brook VPN server with a CLI Menu.
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://nowpayments.io/donation/jalalsaberi)
 
-[<img width="15" height="15"  alt="usdt-bep20" src="https://cryptocurrencyliveprices.com/img/usdt-tether.png">](https://github.com/jalalsaberi/PingBot/) [<img width="15" height="15" alt="binance" src="https://www.svgrepo.com/show/366901/bnb.svg">](https://github.com/jalalsaberi/PingBot/) USDT (BEP20):
+[<img width="17" height="17"  alt="usdt-bep20" src="https://img.icons8.com/color/48/tether.png">](https://github.com/jalalsaberi/PingBot/) [<img width="15" height="15" alt="binance" src="https://www.svgrepo.com/show/366901/bnb.svg">](https://github.com/jalalsaberi/PingBot/) USDT (BEP20):
 ```
 0x165aAc518A3c2Ca5a2108e923e767d3661FA88F3
 ```
-[<img width="15" height="15"  alt="usdt-trc20" src="https://cryptocurrencyliveprices.com/img/usdt-tether.png">](https://github.com/jalalsaberi/PingBot/) [<img width="15" height="15" alt="tron" src="https://www.svgrepo.com/show/428646/tron-crypto.svg">](https://github.com/jalalsaberi/PingBot/) USDT (TRC20):
+[<img width="17" height="17"  alt="usdt-bep20" src="https://img.icons8.com/color/48/tether.png">](https://github.com/jalalsaberi/PingBot/) [<img width="15" height="15" alt="tron" src="https://www.svgrepo.com/show/428646/tron-crypto.svg">](https://github.com/jalalsaberi/PingBot/) USDT (TRC20):
 ```
 TKHNY5zze2PhSaQUGrEyoDz1E9fCG9hjh6
 ```
@@ -73,9 +73,9 @@ The script will install Nami, Brook and give you a CLI Menu for Brook Server.
 
 ## Credits
 
-This script utilizes:
+This project utilizes:
 - **Brook** & **Nami** by [TxThinking](https://github.com/txthinking/)
 
 ## License
 
-This project is licensed under the [MIT License](https://github.com/jalalsaberi/BrookServer?tab=MIT-1-ov-file) (see the LICENSE file for details)
+This project is licensed under the [GPL-3.0 license](https://github.com/jalalsaberi/BrookServer?tab=GPL-3.0-1-ov-file) (see the LICENSE file for details)
